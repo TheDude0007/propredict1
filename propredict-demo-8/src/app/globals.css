@@ -1,0 +1,14 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+:root{--void:#070810;--surface:#0E1120;--elevated:#161B2E;--hover:#1E2540;--edge:#00E5FF;--win:#00FF88;--loss:#FF3D5A;--gold:#FFD166;--neutral:#7B8CDE;--purple:#B47FFF;--text:#F0F4FF;--muted:#4A5278;--dim:#2A3050;--border:rgba(123,140,222,0.14);}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{background:var(--void);color:var(--text);font-family:system-ui,-apple-system,sans-serif;font-size:13px;}
+::-webkit-scrollbar{width:4px;height:4px;}
+::-webkit-scrollbar-thumb{background:var(--dim);border-radius:2px;}
+@keyframes sig{0%,100%{opacity:.5}50%{opacity:1}}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.3;transform:scale(.6)}}
+@keyframes shimmer{0%{background-position:-200% 0}100%{background-position:200% 0}}
+.signal-bar{height:2px;background:linear-gradient(90deg,transparent,var(--edge),var(--neutral),var(--edge),transparent);animation:sig 3s ease-in-out infinite;}
+.pulse-live{display:inline-block;width:5px;height:5px;border-radius:50%;background:var(--win);animation:pulse 1.5s ease-in-out infinite;margin-right:4px;}
+.skeleton{background:linear-gradient(90deg,var(--elevated) 25%,var(--hover) 50%,var(--elevated) 75%);background-size:200% 100%;animation:shimmer 1.5s infinite;border-radius:6px;}
